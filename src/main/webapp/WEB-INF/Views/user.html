@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+  <title>Category Page</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    h1 {
+      text-align:center;
+      background-color: cyan;
+    }
+    .btn {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<h1>Create Account</h1>
+<script>
+  document.getElementById("mes").innerHTML = "";
+</script>
+<div class="container">
+  <form method="GET">
+    <div class="form-group">
+      <label for="ufname">First Name:</label>
+      <input type="text" name="userFName" class="form-control" id="ufname" th:attr="value = ${fname}" >
+    </div>
+    <div class="form-group">
+      <label for="ulname">Last Name:</label>
+      <input type="text" name="userLName" class="form-control" id="ulname" th:attr="value = ${lname}">
+    </div>
+    <div class="form-group">
+      <label for="uemail">Email:</label>
+      <input type="text" name="userEmail" class="form-control" id="uemail" th:attr="value = ${email}">
+    </div>
+    <div class="form-group">
+      <label for="upassword">Password:</label>
+      <input type="text" name="userPassword" class="form-control" id="upassword" th:attr="value = ${password}">
+    </div>
+    <div class="form-group">
+      <label for="ucountry">Country:</label>
+      <input type="text" name="userCountry" class="form-control" id="ucountry" th:attr="value = ${country}">
+    </div>
+    <div class="form-group">
+      <label for="uprovince">Province:</label>
+      <input type="text" name="userProvince" class="form-control" id="uprovince" th:attr="value = ${province}">
+    </div>
+    <div class="form-group">
+      <label for="ucity">City:</label>
+      <input type="text" name="userCity" class="form-control" id="ucity" th:attr="value = ${city}">
+    </div>
+    <div class="form-group">
+      <label for="uzip">Zip:</label>
+      <input type="text" name="userZip" class="form-control" id="uzip" th:attr="value = ${zip}">
+    </div>
+
+    <a class="btn btn-success" href="add-todo">Add</a>
+  </form>
+  <h1 th:text="${errorMessage}" id="mes">Test</h1>
+  <!--<div class="container2">
+    <h2>Users</h2>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!--/*@thymesVar id="userlist" type=""*/-->
+      <!--<tr th:each="p:${userlist}">
+        <td th:text="${p.userFName}"></td>
+        <td th:text="${p.userLName}"></td>
+        <td th:text="${p.userEmail}"></td>
+        <td th:text="${p.userPassword}"></td>
+        <td> <a type="button" class="btn btn-primary"
+                href="update-todo?id=${todo.catcode}"
+                th:href="@{update-todo(id=${p.userFName})}">Edit</a> </td>
+        <td> <a type="button" class="btn btn-primary"
+                th:href="@{delete-todo(id=${p.userFName})}" >Delete</a> </td>
+        <td> <a type="button" class="btn btn-primary" th:onmouseout="'myFunction()'"
+                th:href="@{see-todo(id=${p.userFName})}" >Items</a> </td>
+      </tr>
+      </tbody>
+    </table>
+  </div> -->
+</div>
+<script >
+  function myFunction(){
+    document.getElementById("mes").innerHTML = "";
+  }
+</script>
+</body>
+</html>
